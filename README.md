@@ -1,4 +1,7 @@
 # highlightScroll
+
+Notice that you have to have the same amount of nav-items and sections to get this to work properly.
+
 1. To use the hightlight scroll functionality, add the css class ```.highlight``` to the ```a``` element in your menu.
 
 Like this:
@@ -29,4 +32,3 @@ Like this:
     ...
 </div>
 ```
-
