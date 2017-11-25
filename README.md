@@ -1,5 +1,5 @@
 # highlightScroll
-To use the hightlight scroll functionality, add the css class ```.highlight``` to the a element in your menu.
+To use the hightlight scroll functionality, add the css class ```.highlight``` to the ```a``` element in your menu.
 
 Like this:
 ```html
@@ -24,7 +24,7 @@ Like this:
 </nav>
 ```
 
-And add the css class ```.highlight``` to every div that have css class ```.section```
+Add the two css classes ```.highlight``` and ```.section``` to the section that you want to correspond with the hightlightning on the nav items.
 
 Like this:
 ```javascript
