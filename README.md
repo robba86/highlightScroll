@@ -8,18 +8,7 @@ Like this:
         <li>
             <a href="#section-one" class="highlight">One</a>
         </li>
-        <li>
-            <a href="#section-two" class="highlight">Two</a>
-        </li>
-        <li>
-            <a href="#section-tree" class="highlight">Tree</a>
-        </li>
-        <li>
-            <a href="#section-four" class="highlight">Four</a>
-        </li>
-        <li>
-            <a href="#section-five" class="highlight">Five</a>
-        </li>
+        ...
     </ul>
 </nav>
 ```
@@ -37,6 +26,7 @@ Like this:
             consequat nunc, ac blandit ipsum. Sed at justo eget purus interdum varius eget aliquet nisl. Nulla sed
             accumsan enim, at laoreet dolor.</p>
     </div>
+    ...
 </div>
 ```
 
