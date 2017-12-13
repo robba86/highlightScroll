@@ -36,25 +36,25 @@
 
     "use strict";
 
-    const section = document.querySelectorAll(".section.highlight");
-    const links = document.querySelectorAll(".highlight");
-    const header = document.querySelector("#header");
-    const topPosOffset = header.clientHeight;
+    var section = document.querySelectorAll(".section.highlight");
+    var links = document.querySelectorAll(".highlight");
+    var header = document.querySelector("#header");
+    var topPosOffset = header.clientHeight;
 
-    let lastKnownScrollPos = 0;
-    let scrollTicking = false;
+    var lastKnownScrollPos = 0;
+    var scrollTicking = false;
 
     // Highlight function
     function highlight(scrollPos) {
 
-        for (let i = 0; i < section.length; i++) {
+        for (var i = 0; i < section.length; i++) {
 
-            let topPosition = section[i].getBoundingClientRect().y;
-            let height = section[i].offsetHeight;
-            let marginTop = window.getComputedStyle(section[i], null).getPropertyValue("margin-top").replace(/px/g, '');
-        
-            let start = (topPosition - (marginTop / 2) - topPosOffset) + window.scrollY;
-            let end = (topPosition + height) - (marginTop / 2) - topPosOffset + window.scrollY;
+            var topPosition = section[i].getBoundingClientRect().y;
+            var height = section[i].offsetHeight;
+            var marginTop = window.getComputedStyle(section[i], null).getPropertyValue("margin-top").replace(/px/g, '');
+
+            var start = topPosition - marginTop / 2 - topPosOffset + window.scrollY;
+            var end = topPosition + height - marginTop / 2 - topPosOffset + window.scrollY;
 
             // Hightlight if top hits the start of the element
             if (scrollPos > start) {
@@ -77,7 +77,15 @@
     function highlightLastKnownScrollPos(event) {
         lastKnownScrollPos = window.scrollY;
         if (!scrollTicking) {
-            window.requestAnimationFrame(function () {
+            var animationFrame = window.requestAnimationFrame
+            || window.mozRequestAnimationFrame
+            || window.webkitRequestAnimationFrame
+            || window.msRequestAnimationFrame
+            || function (f) {
+                return setTimeout(f, 1000 / 60);
+            }; // simulate calling code 60 
+
+            animationFrame(function () {
                 highlight(lastKnownScrollPos);
                 scrollTicking = false;
             });
@@ -87,5 +95,4 @@
 
     window.addEventListener("scroll", highlightLastKnownScrollPos, false);
     highlight(lastKnownScrollPos);
-
 })();
